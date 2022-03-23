@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react'
 import Navbar from './Components/Navbar';
 // import Footer from './Components/Footer';
 import './App.css';
+import { faker } from '@faker-js/faker'
 
 
 
@@ -20,7 +21,7 @@ const fetchImg = async () => {
 let res = await fetch('https://api.thecatapi.com/v1/images/search?mime_types=jpg,png&limit=10');
 let data = await res.json();
 console.log(data);
-setCats(data);
+ourCats(data);
 }
 
 const addCat = (item) => {
@@ -58,6 +59,33 @@ useEffect(() => {
   fetchImg();
 }, []);
 
+const ourCats = (data) => {
+  let tempCat = [];
+
+  data.forEach((event) => {
+    let item = {
+      title: faker.breed.cat(),
+      price: faker.datatype.number({
+        min: 60,
+        max: 150,
+      }),
+      breed: faker.animal.cat(),
+      seller: faker.name.firstName(),
+      contact: faker.phone.phoneNumber(),
+      email: faker.internet.email(),
+    };
+    const completeCat = {
+      ...item,
+      ...event,
+      quantity: 1,
+    };
+    tempCat.push(completeCat)
+  });
+  setCats(tempCat)
+}
+
+
+
   return (
     <div className="App">
 
@@ -68,10 +96,13 @@ useEffect(() => {
       {
         cats.map((item, index) => {
           return (
-          <div className='item'>
+          <div className='container'>
             <img key = {item.id} src={item.url} alt="cat Images" />
-            <p>{item.title}</p>
+            <p>{item.breed}</p>
             <p>£{item.price}</p>
+            <p>{item.contact}</p>
+            {/* <p>{item.email}</p> */}
+            <p>{item.title}</p>
             <button className='button' onClick={() => addCat(item)}> Add to Basket </button>
           </div>
           )
