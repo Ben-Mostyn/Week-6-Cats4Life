@@ -26,6 +26,14 @@ const fetchCart = () => {
   setShow(true);
 }
 
+const handleRemove=(item) => {
+  console.log("hello" + item)
+  let tempArr = [...basket];
+  tempArr.quantity = 1;
+  tempArr.splice(item, 1);
+  setBasket(tempArr);
+}
+
 
 const fetchImg = async () => {
 let res = await fetch('https://api.thecatapi.com/v1/images/search?mime_types=jpg,png&limit=10');
@@ -105,11 +113,14 @@ const ourCats = (data) => {
       </nav>
 
 
-      <Cart total={total} basket={basket} onClose={() => setShow(false)} fetchCart={fetchCart} show={show}/>
+      <Cart total={total} basket={basket} onClose={() => setShow(false)} fetchCart={fetchCart} show={show} handleRemove={handleRemove} />
 
           <div className="h2">
-            <h2>Kitty's for sale here</h2>
+            <h2>FurrrSale</h2>
+            <p> Bringing cats, to a home near you</p>
           </div>
+
+      <div className="maincont">    
       <div className="mainContainer">
       {
         cats.map((item, index) => {
@@ -128,6 +139,7 @@ const ourCats = (data) => {
           )
         })
       }
+      </div>
       </div>
 
     
