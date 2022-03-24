@@ -1,7 +1,10 @@
 import React from "react";
 import { FaShoppingCart, FaPhone, FaHome, FaPaw } from 'react-icons/fa'
 
-const Navbar = () => {
+const Navbar = ( { fetchCart }) => {
+
+
+    
 
 
 return(
@@ -26,7 +29,10 @@ return(
             </div>
         </div>
             <div className="cart">
-            <a href='/#'><li> <FaShoppingCart />  </li> </a> 
+
+               
+            <a href='/#'><li> <button onClick={fetchCart}  className="cartButton"> <FaShoppingCart /> </button>  </li> </a> 
+        
         </div>
     </ul>
     
