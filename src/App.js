@@ -8,13 +8,23 @@ import Navbar from './Components/Navbar';
 // import Footer from './Components/Footer';
 import './App.css';
 import { faker } from '@faker-js/faker'
+import Cart from './Components/checkout';
 
 
 
 
 function App() {
 const [cats, setCats] = useState(['']);
-const [basket, setBasket] = useState([])
+const [basket, setBasket] = useState([]);
+const [show, setShow] = useState(false);
+const [total, setTotal] = useState([""]);
+
+
+////////Button for cart function
+
+const fetchCart = () => {
+  setShow(true);
+}
 
 
 const fetchImg = async () => {
@@ -49,8 +59,9 @@ const updatedTotal = () => {
   let curQuan = 0; 
     basket.forEach((event) => {
     curTot = curTot + event.price * event.quantity;
-    curQuan = curQuan + event.quantity
+    curQuan = curQuan + event.quantity;
   })
+  setTotal([curTot.toFixed(0)])
 }
 
 
@@ -90,8 +101,12 @@ const ourCats = (data) => {
     <div className="App">
 
       <nav className='navbar'>
-        <Navbar />
+        <Navbar fetchCart={fetchCart} onClose={() => setShow(false)} />
       </nav>
+
+
+      <Cart total={total} basket={basket} onClose={() => setShow(false)} fetchCart={fetchCart} show={show}/>
+
           <div className="h2">
             <h2>Kitty's for sale here</h2>
           </div>
