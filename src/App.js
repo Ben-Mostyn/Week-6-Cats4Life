@@ -64,7 +64,7 @@ const ourCats = (data) => {
 
   data.forEach((event) => {
     let item = {
-      title: faker.breed.cat(),
+      // title: faker.breed.cat(),
       price: faker.datatype.number({
         min: 60,
         max: 150,
@@ -92,7 +92,10 @@ const ourCats = (data) => {
       <nav className='navbar'>
         <Navbar />
       </nav>
-
+          <div className="h2">
+            <h2>Kitty's for sale here</h2>
+          </div>
+      <div className="mainContainer">
       {
         cats.map((item, index) => {
           return (
@@ -101,13 +104,16 @@ const ourCats = (data) => {
             <p>{item.breed}</p>
             <p>£{item.price}</p>
             <p>{item.contact}</p>
-            {/* <p>{item.email}</p> */}
+            <p>{item.email}</p>
             <p>{item.title}</p>
             <button className='button' onClick={() => addCat(item)}> Add to Basket </button>
+            
           </div>
+          
           )
         })
       }
+      </div>
 
     
     </div>
