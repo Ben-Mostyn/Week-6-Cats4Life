@@ -72,7 +72,7 @@ useEffect(() => {
 
 useEffect(() => {
   const fetchImg = async () => {
-    let res = await fetch('https://api.thecatapi.com/v1/images/search?mime_types=jpg,png&limit=10');
+    let res = await fetch('https://api.thecatapi.com/v1/images/search?mime_types=jpg,png&limit=9');
     let data = await res.json();
     console.log(data);
     ourCats(data);
@@ -148,6 +148,30 @@ const ourCats = (data) => {
       </div>
       </div>
 
+      <footer className='footer'>
+        <div>
+        <h2 className='footerh2'>Thank you for supporting our cats</h2>
+        </div>
+        <div className="footerlinks">
+          <ul>
+            <div className="footeritems">
+            <li>Careers at FurrrSale</li>
+            <li>Contact us</li>
+            <li>Donate here </li>
+            </div>
+            <div className="footeritems">
+            <li>Help Cats here</li>
+            <li>Cats are awesome</li>
+            <li>Click here if you are cool </li>
+            </div>
+            <div className="footeritems">
+            <li>Cats are cute</li>
+            <li>Really cute</li>
+            <li>And also cool </li>
+            </div>
+          </ul>
+        </div>
+      </footer>
     
     </div>
   );
