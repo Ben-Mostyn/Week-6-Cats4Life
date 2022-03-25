@@ -59,6 +59,8 @@ nav ul img {
   width: 150px;
 }
 
+/*Cart Basket Icon*/
+
 .cart {
   font-size: 30px;
   display: flex;
@@ -84,6 +86,8 @@ nav ul img {
   font-size: 33px;
 }
 
+/*Left Side Nav, ignore the naming mistake*/
+
 .rightNav {
   display: flex;
   width: 50%;
@@ -101,6 +105,8 @@ nav ul li:hover,
   background-color: #e7e7e7;
   border-radius: 8px;
 }
+
+/* Individual Nav component styles*/
 
 .home {
   width: 200px;
@@ -129,6 +135,8 @@ ul .cart a li:hover {
   align-items: center;
 }
 
+/*Containers for Main Content*/
+
 .mainContainer {
   display: flex;
   justify-content: center;
@@ -140,9 +148,12 @@ ul .cart a li:hover {
   border-radius: 8px;
 }
 
+/*Span for List in each cat Card*/
 .span1 {
   font-weight: 800;
 }
+
+/*Each Cat Card*/
 
 .container {
   border: rgb(0, 0, 0) 2px solid;
@@ -173,6 +184,16 @@ ul .cart a li:hover {
   font-family: Ramaraja;
 }
 
+.addBtn {
+  height: 40px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Logo FurrrSale*/
+
 .h2 {
   height: 300px;
   width: 1750px;
@@ -197,14 +218,18 @@ h2 {
   font-size: 60px;
 }
 
+/*Slogan*/
+
 .h2 p {
   font-size: 16px;
   font-family: "Lobster", cursive;
 }
 
+/*Shopping Cart Styling*/
+
 .cartContainer {
   border: 3px solid rgb(31, 31, 31);
-  width: 400px;
+  width: 500px;
   height: 400px;
   order: 2;
   position: absolute;
@@ -245,10 +270,11 @@ h2 {
 }
 
 .cart1 {
-  border: 2px rgb(0, 0, 0) solid;
+  border: 2px rgba(0, 0, 0, 0.623) solid;
   height: 80px;
   display: flex;
   margin: 10px 0px;
+  border-radius: 8px;
 }
 
 .rmvBtn {
@@ -256,6 +282,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 15px;
 }
 
 .rmvBtn button {
@@ -273,6 +300,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 10px;
 }
 
 .cartItems {
@@ -312,12 +340,4 @@ h2 {
   font-size: 30px;
   width: 34px;
   height: 34px;
-}
-
-.addBtn {
-  height: 40px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

@@ -11,7 +11,7 @@ const Cart = (props ) => {
             <div className="cartContainer">
                 <button className='cartBTN' onClick={props.onClose}><FaWindowClose/></button>
                     <div className="cartTitle">
-                        <h4>Basket</h4>
+                        <h4>Your Cart</h4>
                     </div>
                 {props.basket.map((cat, index) => {
                     return (
