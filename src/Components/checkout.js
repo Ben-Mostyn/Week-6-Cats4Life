@@ -1,4 +1,5 @@
-import {FaWindowClose} from 'react-icons/fa'
+import {FaWindowClose} from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 
 const Cart = (props ) => {
@@ -8,7 +9,25 @@ const Cart = (props ) => {
     }
     
         return ( 
-            <div className="cartContainer">
+            <motion.div className="cartContainer"
+            initial={{
+               opacity: 0,
+            x:500,
+            scale: 0 
+            
+            }}
+            animate={{
+             opacity: 1,
+             color: '#575f64',
+             y: 0,
+             x: 0,
+             scale: 1
+             }} 
+              transition={{
+              ease: "easeIn",
+              duration: .6
+            }}
+            >
                 <button className='cartBTN' onClick={props.onClose}><FaWindowClose/></button>
                     <div className="cartTitle">
                         <h4>Your Bag</h4>
@@ -39,7 +58,7 @@ const Cart = (props ) => {
                 <div className="totalSum">
                  <p> Your total is £{props.total}</p>
                  </div>
-            </div>
+            </motion.div>
          );
     }
      

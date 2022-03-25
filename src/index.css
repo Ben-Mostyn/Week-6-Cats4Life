@@ -248,6 +248,7 @@ h2 {
   right: 10px;
   border-radius: 8px;
   overflow: scroll;
+  transform: translateX(100deg);
 }
 
 .maincont {
