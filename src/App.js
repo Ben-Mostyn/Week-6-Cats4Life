@@ -11,6 +11,8 @@ import Navbar from './Components/Navbar';
 import './App.css';
 import { faker } from '@faker-js/faker'
 import Cart from './Components/checkout';
+import Slider from './Components/Slider';
+import { SliderData } from './Components/SliderData';
 
 
 
@@ -20,6 +22,8 @@ const [cats, setCats] = useState(['']);
 const [basket, setBasket] = useState([]);
 const [show, setShow] = useState(false);
 const [total, setTotal] = useState([""]);
+
+
 
 
 ////////Button for cart function
@@ -121,6 +125,24 @@ const ourCats = (data) => {
             <h2>FurrrSale</h2>
             <p> Bringing cats, to a home near you</p>
           </div>
+
+       
+
+            <div className='SliderContainer'>
+              <div className="sliderh4"> 
+              <div className="h4cont">
+                <h4>Meet Our forever Home's</h4>
+                <p>Here at FurrrSale we strive to make <br /> unwanted cats, wanted again. <br /> Do not buy, ADOPT!!!</p>
+              </div>
+              </div>
+            <div className="slider1">
+            <Slider slides={SliderData} />
+            </div>
+            </div>
+            <div className="sale">
+              <h3>Please give some of our purrfect cats a forever home!</h3>
+            </div>
+          
 
       <div className="maincont">    
       <div className="mainContainer">
