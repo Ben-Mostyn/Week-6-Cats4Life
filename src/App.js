@@ -47,7 +47,7 @@ ourCats(data);
 const addCat = (item) => {
   if(basket.includes(item)){
     let tempBasket = [...basket];
-    tempBasket[tempBasket.indexOf(item)].quantity +=1;
+    tempBasket[tempBasket.indexOf(item)].quantity =1;
     setBasket(tempBasket) 
     console.log(basket)
     
@@ -62,7 +62,7 @@ const addCat = (item) => {
 
 useEffect(() => {
   updatedTotal();
-}, [, basket])
+}, [ basket]);
 
 const updatedTotal = () => {
   let curTot = 0;
