@@ -37,12 +37,7 @@ const handleRemove=(item) => {
 }
 
 
-const fetchImg = async () => {
-let res = await fetch('https://api.thecatapi.com/v1/images/search?mime_types=jpg,png&limit=10');
-let data = await res.json();
-console.log(data);
-ourCats(data);
-}
+
 
 const addCat = (item) => {
   if(basket.includes(item)){
@@ -61,23 +56,28 @@ const addCat = (item) => {
 };
 
 useEffect(() => {
-  updatedTotal();
+  const updatedTotal = () => {
+    let curTot = 0;
+    let curQuan = 0; 
+      basket.forEach((event) => {
+      curTot = curTot + event.price * event.quantity;
+      curQuan = curQuan + event.quantity;
+    })
+    setTotal([curTot.toFixed(0)])
+  }
+  updatedTotal()
 }, [ basket]);
-
-const updatedTotal = () => {
-  let curTot = 0;
-  let curQuan = 0; 
-    basket.forEach((event) => {
-    curTot = curTot + event.price * event.quantity;
-    curQuan = curQuan + event.quantity;
-  })
-  setTotal([curTot.toFixed(0)])
-}
 
 
 
 useEffect(() => {
-  fetchImg();
+  const fetchImg = async () => {
+    let res = await fetch('https://api.thecatapi.com/v1/images/search?mime_types=jpg,png&limit=10');
+    let data = await res.json();
+    console.log(data);
+    ourCats(data);
+    }
+    fetchImg()
 }, []);
 
 const ourCats = (data) => {
