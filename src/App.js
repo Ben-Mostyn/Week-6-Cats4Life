@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react'
 // Cat images coming from an API (https://thecatapi.com/)
 
+import { AiOutlinePlus } from 'react-icons/ai';
+
 
 //Import Components
 import Navbar from './Components/Navbar';
@@ -122,18 +124,22 @@ const ourCats = (data) => {
 
       <div className="maincont">    
       <div className="mainContainer">
+        
       {
         cats.map((item, index) => {
           return (
           <div className='container'>
-            <img key = {item.id} src={item.url} alt="cat Images" />
-            <p>{item.breed}</p>
-            <p>£{item.price}</p>
-            <p>{item.contact}</p>
-            <p>{item.email}</p>
-            <p>{item.title}</p>
-            <button className='button' onClick={() => addCat(item)}> Add to Basket </button>
-            
+                <img key = {item.id} src={item.url} alt="cat Images" />
+                <div className="item1">
+                  <p><span className='span1'> Breed: </span> {item.breed}</p>
+                  <p><span className='span1'> Price: </span> £{item.price}</p>
+                  <p><span className='span1'> Number: </span> {item.contact}</p>
+                  <p> <span className='span1'>  Email: </span> {item.email}</p>
+                <p>{item.title}</p>
+                </div>
+            <div className="addBtn">
+                <button className='button' onClick={() => addCat(item)}> <AiOutlinePlus /> </button>
+            </div>
           </div>
           
           )

@@ -130,14 +130,18 @@ ul .cart a li:hover {
 }
 
 .mainContainer {
-  border: green 3px solid;
   display: flex;
   justify-content: center;
   max-width: 90vw;
   height: 1500px;
   flex-wrap: wrap;
-  background-color: #eeeeee;
+  background-color: #41414198;
   overflow-y: scroll;
+  border-radius: 8px;
+}
+
+.span1 {
+  font-weight: 800;
 }
 
 .container {
@@ -155,6 +159,12 @@ ul .cart a li:hover {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 2px 2px 5px 2px #0000009d;
+}
+.item1 {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-left: 50px;
 }
 
 .container p {
@@ -183,26 +193,131 @@ h2 {
   margin: 5px;
   background-color: #ffffff;
   border-radius: 8px;
+  font-family: "Lobster", cursive;
+  font-size: 60px;
 }
 
 .h2 p {
-  font-size: 18px;
+  font-size: 16px;
+  font-family: "Lobster", cursive;
 }
 
 .cartContainer {
-  border: 2px solid red;
-  width: 200px;
+  border: 3px solid rgb(31, 31, 31);
+  width: 400px;
   height: 400px;
   order: 2;
   position: absolute;
   z-index: 10;
   float: right;
-  background-color: white;
+  background-color: rgb(226, 226, 226);
   right: 10px;
+  border-radius: 8px;
+  overflow: scroll;
 }
 
 .maincont {
-  border: 2px red solid;
   display: flex;
   justify-content: center;
+}
+
+.cartTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: rgb(31, 31, 31);
+  font-family: "Lobster", cursive;
+}
+
+.cartTitle h4 {
+  font-family: "Lobster", cursive;
+}
+
+.cartBTN {
+  font-size: 25px;
+  color: #424142;
+  padding: 0px;
+  margin: 0px;
+  height: 30px;
+  outline: none;
+  border: none;
+}
+
+.cart1 {
+  border: 2px rgb(0, 0, 0) solid;
+  height: 80px;
+  display: flex;
+  margin: 10px 0px;
+}
+
+.rmvBtn {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rmvBtn button {
+  border: none;
+  font-size: 18px;
+}
+
+.cart1 img {
+  width: 60px;
+  height: 60px;
+}
+
+.imgcnt {
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartItems {
+  width: 350px;
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+.cartItems p {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.totalSum {
+  position: realtive;
+  bottom: 0px;
+  font-size: 18px;
+  height: 40px;
+  width: 400px;
+}
+
+.button {
+  font-size: 20px;
+  border: none;
+  background-color: rgb(129, 129, 129);
+  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.button:hover {
+  font-size: 30px;
+  width: 34px;
+  height: 34px;
+}
+
+.addBtn {
+  height: 40px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

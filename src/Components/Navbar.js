@@ -1,6 +1,7 @@
 import React from "react";
 import { FaShoppingCart, FaPhone, FaHome, FaPaw } from 'react-icons/fa'
 
+
 const Navbar = ( { fetchCart }) => {
 
 
